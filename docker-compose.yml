@@ -1,0 +1,39 @@
+version: '3.8'
+
+services:
+  studentservice:
+    build:
+      context: ./StudentService/StudentService
+      dockerfile: Dockerfile
+    ports:
+      - "5001:80"
+    environment:
+      - ASPNETCORE_URLS=http://+:80
+    networks:
+      - microservices-network
+
+  disciplineservice:
+    build:
+      context: ./DisciplineService/DisciplineService
+      dockerfile: Dockerfile
+    ports:
+      - "5002:80"
+    environment:
+      - ASPNETCORE_URLS=http://+:80
+    networks:
+      - microservices-network
+
+  enrollmentservice:
+    build:
+      context: ./EnrollmentService/EnrollmentService
+      dockerfile: Dockerfile
+    ports:
+      - "5003:80"
+    environment:
+      - ASPNETCORE_URLS=http://+:80
+    networks:
+      - microservices-network
+
+networks:
+  microservices-network:
+    driver: bridge

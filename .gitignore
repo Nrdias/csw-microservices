@@ -1,0 +1,21 @@
+# .NET
+bin/
+obj/
+*.user
+*.db
+*.db-shm
+*.db-wal
+
+# Visual Studio
+.vscode/
+.vs/
+
+# Docker
+.dockerignore
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Temp files
+packages-microsoft-prod.deb
